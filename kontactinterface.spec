@@ -6,7 +6,7 @@
 #
 Name     : kontactinterface
 Version  : 18.08.0
-Release  : 1
+Release  : 2
 URL      : https://download.kde.org/stable/applications/18.08.0/src/kontactinterface-18.08.0.tar.xz
 Source0  : https://download.kde.org/stable/applications/18.08.0/src/kontactinterface-18.08.0.tar.xz
 Source99 : https://download.kde.org/stable/applications/18.08.0/src/kontactinterface-18.08.0.tar.xz.sig
@@ -77,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535200685
+export SOURCE_DATE_EPOCH=1535431760
 mkdir clr-build
 pushd clr-build
 %cmake ..
@@ -85,7 +85,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535200685
+export SOURCE_DATE_EPOCH=1535431760
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/kontactinterface
 cp COPYING.LIB %{buildroot}/usr/share/doc/kontactinterface/COPYING.LIB
@@ -100,6 +100,8 @@ popd
 %files data
 %defattr(-,root,root,-)
 /usr/share/kservicetypes5/kontactplugin.desktop
+/usr/share/xdg/kontactinterface.categories
+/usr/share/xdg/kontactinterface.renamecategories
 
 %files dev
 %defattr(-,root,root,-)
