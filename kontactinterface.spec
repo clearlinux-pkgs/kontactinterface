@@ -5,18 +5,18 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kontactinterface
-Version  : 18.08.0
-Release  : 3
-URL      : https://download.kde.org/stable/applications/18.08.0/src/kontactinterface-18.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/18.08.0/src/kontactinterface-18.08.0.tar.xz
-Source99 : https://download.kde.org/stable/applications/18.08.0/src/kontactinterface-18.08.0.tar.xz.sig
+Version  : 18.12.2
+Release  : 4
+URL      : https://download.kde.org/stable/applications/18.12.2/src/kontactinterface-18.12.2.tar.xz
+Source0  : https://download.kde.org/stable/applications/18.12.2/src/kontactinterface-18.12.2.tar.xz
+Source99 : https://download.kde.org/stable/applications/18.12.2/src/kontactinterface-18.12.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
-Requires: kontactinterface-lib
-Requires: kontactinterface-license
-Requires: kontactinterface-data
-Requires: kontactinterface-locales
+Requires: kontactinterface-data = %{version}-%{release}
+Requires: kontactinterface-lib = %{version}-%{release}
+Requires: kontactinterface-license = %{version}-%{release}
+Requires: kontactinterface-locales = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : libX11-dev libICE-dev libSM-dev libXau-dev libXcomposite-dev libXcursor-dev libXdamage-dev libXdmcp-dev libXext-dev libXfixes-dev libXft-dev libXi-dev libXinerama-dev libXi-dev libXmu-dev libXpm-dev libXrandr-dev libXrender-dev libXres-dev libXScrnSaver-dev libXt-dev libXtst-dev libXv-dev libXxf86misc-dev libXxf86vm-dev
@@ -35,9 +35,9 @@ data components for the kontactinterface package.
 %package dev
 Summary: dev components for the kontactinterface package.
 Group: Development
-Requires: kontactinterface-lib
-Requires: kontactinterface-data
-Provides: kontactinterface-devel
+Requires: kontactinterface-lib = %{version}-%{release}
+Requires: kontactinterface-data = %{version}-%{release}
+Provides: kontactinterface-devel = %{version}-%{release}
 
 %description dev
 dev components for the kontactinterface package.
@@ -46,8 +46,8 @@ dev components for the kontactinterface package.
 %package lib
 Summary: lib components for the kontactinterface package.
 Group: Libraries
-Requires: kontactinterface-data
-Requires: kontactinterface-license
+Requires: kontactinterface-data = %{version}-%{release}
+Requires: kontactinterface-license = %{version}-%{release}
 
 %description lib
 lib components for the kontactinterface package.
@@ -70,25 +70,25 @@ locales components for the kontactinterface package.
 
 
 %prep
-%setup -q -n kontactinterface-18.08.0
+%setup -q -n kontactinterface-18.12.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1535431760
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1549872803
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
 make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1535431760
+export SOURCE_DATE_EPOCH=1549872803
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/kontactinterface
-cp COPYING.LIB %{buildroot}/usr/share/doc/kontactinterface/COPYING.LIB
+mkdir -p %{buildroot}/usr/share/package-licenses/kontactinterface
+cp COPYING.LIB %{buildroot}/usr/share/package-licenses/kontactinterface/COPYING.LIB
 pushd clr-build
 %make_install
 popd
@@ -129,11 +129,11 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5KontactInterface.so.5
-/usr/lib64/libKF5KontactInterface.so.5.9.0
+/usr/lib64/libKF5KontactInterface.so.5.10.2
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/kontactinterface/COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/kontactinterface/COPYING.LIB
 
 %files locales -f kontactinterfaces5.lang
 %defattr(-,root,root,-)
