@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDBD2CE893E2D1C87 (cfeck@kde.org)
 #
 Name     : kontactinterface
-Version  : 19.08.0
-Release  : 12
-URL      : https://download.kde.org/stable/applications/19.08.0/src/kontactinterface-19.08.0.tar.xz
-Source0  : https://download.kde.org/stable/applications/19.08.0/src/kontactinterface-19.08.0.tar.xz
-Source1 : https://download.kde.org/stable/applications/19.08.0/src/kontactinterface-19.08.0.tar.xz.sig
+Version  : 19.08.1
+Release  : 13
+URL      : https://download.kde.org/stable/applications/19.08.1/src/kontactinterface-19.08.1.tar.xz
+Source0  : https://download.kde.org/stable/applications/19.08.1/src/kontactinterface-19.08.1.tar.xz
+Source1 : https://download.kde.org/stable/applications/19.08.1/src/kontactinterface-19.08.1.tar.xz.sig
 Summary  : Kontact Plugin Interface Library
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -72,14 +72,14 @@ locales components for the kontactinterface package.
 
 
 %prep
-%setup -q -n kontactinterface-19.08.0
+%setup -q -n kontactinterface-19.08.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565906489
+export SOURCE_DATE_EPOCH=1567708188
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -96,7 +96,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1565906489
+export SOURCE_DATE_EPOCH=1567708188
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kontactinterface
 cp COPYING.LIB %{buildroot}/usr/share/package-licenses/kontactinterface/COPYING.LIB
@@ -140,7 +140,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5KontactInterface.so.5
-/usr/lib64/libKF5KontactInterface.so.5.12.0
+/usr/lib64/libKF5KontactInterface.so.5.12.1
 
 %files license
 %defattr(0644,root,root,0755)
