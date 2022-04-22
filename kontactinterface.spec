@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : kontactinterface
-Version  : 21.12.3
-Release  : 39
-URL      : https://download.kde.org/stable/release-service/21.12.3/src/kontactinterface-21.12.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/21.12.3/src/kontactinterface-21.12.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/21.12.3/src/kontactinterface-21.12.3.tar.xz.sig
+Version  : 22.04.0
+Release  : 40
+URL      : https://download.kde.org/stable/release-service/22.04.0/src/kontactinterface-22.04.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.04.0/src/kontactinterface-22.04.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.04.0/src/kontactinterface-22.04.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause CC0-1.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -72,15 +72,15 @@ locales components for the kontactinterface package.
 
 
 %prep
-%setup -q -n kontactinterface-21.12.3
-cd %{_builddir}/kontactinterface-21.12.3
+%setup -q -n kontactinterface-22.04.0
+cd %{_builddir}/kontactinterface-22.04.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1646529213
+export SOURCE_DATE_EPOCH=1650664779
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -96,17 +96,19 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1646529213
+export SOURCE_DATE_EPOCH=1650664779
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kontactinterface
-cp %{_builddir}/kontactinterface-21.12.3/CMakePresets.json.license %{buildroot}/usr/share/package-licenses/kontactinterface/29fb05b49e12a380545499938c4879440bd8851e
-cp %{_builddir}/kontactinterface-21.12.3/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kontactinterface/8287b608d3fa40ef401339fd907ca1260c964123
-cp %{_builddir}/kontactinterface-21.12.3/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kontactinterface/20079e8f79713dce80ab09774505773c926afa2a
-cp %{_builddir}/kontactinterface-21.12.3/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/kontactinterface/6f1f675aa5f6a2bbaa573b8343044b166be28399
-cp %{_builddir}/kontactinterface-21.12.3/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kontactinterface/757b86330df80f81143d5916b3e92b4bcb1b1890
-cp %{_builddir}/kontactinterface-21.12.3/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kontactinterface/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/kontactinterface-21.12.3/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kontactinterface/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/kontactinterface-21.12.3/metainfo.yaml.license %{buildroot}/usr/share/package-licenses/kontactinterface/7ff5a7dd2c915b2b34329c892e06917c5f82f3a4
+cp %{_builddir}/kontactinterface-22.04.0/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/kontactinterface/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
+cp %{_builddir}/kontactinterface-22.04.0/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/kontactinterface/8287b608d3fa40ef401339fd907ca1260c964123
+cp %{_builddir}/kontactinterface-22.04.0/LICENSES/LGPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/kontactinterface/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kontactinterface-22.04.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/kontactinterface/20079e8f79713dce80ab09774505773c926afa2a
+cp %{_builddir}/kontactinterface-22.04.0/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/kontactinterface/6f1f675aa5f6a2bbaa573b8343044b166be28399
+cp %{_builddir}/kontactinterface-22.04.0/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/kontactinterface/757b86330df80f81143d5916b3e92b4bcb1b1890
+cp %{_builddir}/kontactinterface-22.04.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kontactinterface/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kontactinterface-22.04.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/kontactinterface/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/kontactinterface-22.04.0/metainfo.yaml.license %{buildroot}/usr/share/package-licenses/kontactinterface/7ff5a7dd2c915b2b34329c892e06917c5f82f3a4
+cp %{_builddir}/kontactinterface-22.04.0/src/kontactplugin.desktop.license %{buildroot}/usr/share/package-licenses/kontactinterface/864bc0eb28c73bd997ac19ff91935ab771846615
 pushd clr-build
 %make_install
 popd
@@ -136,7 +138,7 @@ popd
 /usr/include/KF5/KontactInterface/kontactinterface/processes.h
 /usr/include/KF5/KontactInterface/kontactinterface/summary.h
 /usr/include/KF5/KontactInterface/kontactinterface/uniqueapphandler.h
-/usr/include/KF5/kontactinterface_version.h
+/usr/include/KF5/KontactInterface/kontactinterface_version.h
 /usr/lib64/cmake/KF5KontactInterface/KF5KontactInterfaceConfig.cmake
 /usr/lib64/cmake/KF5KontactInterface/KF5KontactInterfaceConfigVersion.cmake
 /usr/lib64/cmake/KF5KontactInterface/KF5KontactInterfaceTargets-relwithdebinfo.cmake
@@ -147,16 +149,17 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5KontactInterface.so.5
-/usr/lib64/libKF5KontactInterface.so.5.19.3
+/usr/lib64/libKF5KontactInterface.so.5.20.0
 
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/kontactinterface/20079e8f79713dce80ab09774505773c926afa2a
-/usr/share/package-licenses/kontactinterface/29fb05b49e12a380545499938c4879440bd8851e
 /usr/share/package-licenses/kontactinterface/6f1f675aa5f6a2bbaa573b8343044b166be28399
 /usr/share/package-licenses/kontactinterface/757b86330df80f81143d5916b3e92b4bcb1b1890
 /usr/share/package-licenses/kontactinterface/7ff5a7dd2c915b2b34329c892e06917c5f82f3a4
 /usr/share/package-licenses/kontactinterface/8287b608d3fa40ef401339fd907ca1260c964123
+/usr/share/package-licenses/kontactinterface/864bc0eb28c73bd997ac19ff91935ab771846615
+/usr/share/package-licenses/kontactinterface/9950d3fdce1cff1f71212fb5abd31453c6ee2f8c
 /usr/share/package-licenses/kontactinterface/e458941548e0864907e654fa2e192844ae90fc32
 
 %files locales -f kontactinterfaces5.lang
